@@ -1,19 +1,23 @@
 {
-  "name": "nonsense-library",
-  "version": "1.0.0",
+  "name": "@typescript/nonsense-library",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vitest",
     "test": "vitest run",
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc",
-    "ci": "pnpm run lint && pnpm run test && pnpm run build"
+    "ci": "pnpm run lint && pnpm run test && pnpm run build",
+    "release": "pnpm run ci && changeset publish"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "tsup": "^7.2.0",
     "typescript": "^5.1.6",
     "vitest": "^0.34.1"
